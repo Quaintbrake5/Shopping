@@ -35,7 +35,8 @@
             font-size: 40px;   
             color: crimson;
             margin-right: 300px;
-            transition: all ease-in 3s;                            
+            transition: all ease-in 3s;
+            cursor: pointer;                          
         }
         
         nav{
@@ -97,6 +98,7 @@
         nav .more a i{
             font-size: 25px;
             color: white !important;
+            cursor: pointer;
         }
 
         .dashboard_section{
@@ -149,6 +151,7 @@
             align-items: center;
             justify-content: center;
             margin-left: 25%;
+            cursor: pointer;
         }
 
         .actionButton:nth-last-child(1){
@@ -162,6 +165,7 @@
             border-radius: 10px;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
         }
         
         .input_container.input{
@@ -213,13 +217,29 @@
             align-items: center;
             justify-content: center;
             gap: 4%;
-            height: auto fit-content;
+            row-gap: 7%;
+            height: auto;
         }
 
         .adminProduct img{
             border-radius: 30px;
             height: 200px;
             width: 200px;
+        }
+
+        storeButton .button#store.store{
+            margin-top: 10px;
+            width: 50%;
+            padding: 12px 14px;
+            font-size: 16px;
+            background-color: whitesmoke;
+            color: black;
+            border: none;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+            margin-left: 25%;
+            cursor: pointer;
         }
     </style>
 
@@ -315,6 +335,14 @@
             
         </div>
     </section>
+
+    <div class="storeButton" id="storeButton">
+        <a href="account.htm" class="storeLink">
+            <button class="store" id="store">
+                Go to Store
+            </button>
+        </a>
+    </div>
 
 <script src = "admin.js"></script>
 </body>
