@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+</head>
+<body>
+    
+    <style class="global">
+        @import url('https://fonts.cdnfonts.com/css/google-sans');
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+        @import url('https://fonts.cdnfonts.com/css/hades');
+        
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Product Sans', sans-serif;
+        }
+        
+        body{
+            max-width: 100%;
+            background-size: cover; /* This will make sure the image covers the entire element */
+            background-position: center center; /* This will center the image */
+            background-color: whitesmoke;
+        }
+        
+        .logo{
+            font-family: 'hades', sans-serif;
+            text-decoration: none;
+            justify-content: left;
+            align-items: center;
+            float: left;
+            font-size: 40px;   
+            color: crimson;
+            margin-right: 300px;
+            transition: all ease-in 3s;                            
+        }
+        
+        nav{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid gainsboro;
+            margin-bottom: 50px;
+            background-color: black;
+            position: sticky;
+            border-radius: 4px;
+        }
+        
+        nav .search_container{
+            background-color: whitesmoke;
+            border: 1px solid gainsboro;
+            width: 550px;
+            height: 40px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px 10px;
+            border-radius: 50px;
+            margin-right: 300px;
+            margin-left: 20px;
+            left: 4;
+            right: 18;
+            z-index: auto;
+        }
+        
+        nav .search_container input{
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: transparent;
+            outline: none;
+            padding-left: 5px;
+        }
+        
+        nav .more{
+            display: flex;
+            gap: 20px;
+        }
+        
+        nav .more a{
+            text-decoration: none;
+            color: rgb(64, 64, 64);
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 550;
+            color: white;
+        }
+        
+        nav .more a i{
+            font-size: 25px;
+            color: white !important;
+        }
+
+        .dashboard_section{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .dashboard-section .dashboard .heading{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+            font-size: 55px;
+        }
+
+        .products{
+            border: black ;
+            border-radius: 30px;
+            width: 50%;
+            margin: 30px auto;
+            padding: 50px 30px;
+            background-color: rgba(112, 128, 144, 0.082);
+            flex-wrap: wrap;
+        }
+
+        .input_container{
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            border-radius: 50%;
+            padding: 2px;
+        }
+        
+        .input_container label{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        button{
+            margin-top: 10px;
+            width: 50%;
+            padding: 12px 14px;
+            font-size: 16px;
+            background-color: whitesmoke;
+            color: black;
+            border: none;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+            margin-left: 25%;
+        }
+
+        .actionButton:nth-last-child(1){
+            margin-top: 10px;
+            width: 50%;
+            padding: 12px 14px;
+            font-size: 16px;
+            background-color: slategray;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .input_container.input{
+            padding: 12px;
+            font-size: 16px;
+            background-color: whitesmoke;
+            border: 1px solid gainsboro;
+            
+        }
+        
+        .input_container.label{
+            font-family: "Cambria" serif;
+        }
+
+        input{
+            height: 45px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgba(112, 128, 144, 0.169);
+            color: black;
+            padding-left: 2%;
+        }
+
+        select{
+            height: 45px;
+            border-radius: 5px; 
+            background-color: rgba(112, 128, 144, 0.169);
+            border: none;
+            color: black;
+        }
+
+        .adminProduct h2{
+            margin-left: 10%;
+            font-size: xx-large;
+        }
+
+        .product-container{
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            flex-wrap: wrap;
+            background-color: rgba(112, 128, 144, 0.13);
+            border-radius: 20px;
+            padding-left: 6.5%;
+            padding-top: 4%;
+            padding-bottom: 4%;
+            align-items: center;
+            justify-content: center;
+            gap: 4%;
+            height: auto fit-content;
+        }
+
+        .adminProduct img{
+            border-radius: 30px;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+
+    <nav>
+        <a href="admin.htm" class="logo">
+            <i class="fa-brands fa-squarespace"></i>
+            
+        </a>
+        
+        <div class="search_container" id =>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" placeholder="Search..." id = 'productName'>
+        </div>
+
+        <div class="more">
+           <a href="account.htm">
+            <i class="fa-solid fa-user"></i>
+            Account
+           </a>
+
+           <a href="cart.htm">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Cart
+           </a>
+        </div>
+    </nav>
+
+    <section class="dashboard-section">
+        <div class="dashboard">
+            <h1 class="heading">Admin Dashboard for Products</h1>
+        </div>
+    </section>
+
+    <section class="productForm">
+        <div class="form-container">
+            <form class="products">
+                <div class="input_container">
+                    <label for="name">Product</label>
+                    <input required placeholder="Enter Product" id="product" type="text" name="product">
+                </div>
+        
+                <div class="input_container">
+                    <label for="offence">Product Type</label>
+                    <!-- <input required placeholder="Enter Offence" id="offence" type="text" name="offence"> -->
+                    <select name="" id="type">
+                        <option value="">Select Disabled</option>
+                        <option value="Kitchen Items">Kitchenware</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Sanitary">Sanitary Wares</option>
+                        <option value="Miscellanous">Miscellanous</option>
+                        <option value="Accessories">Accessories</option>
+                        <!-- <option value="Other">Other -->
+                            <!-- <input required placeholder="Enter Other" type="text" name="other"> -->
+                        <!-- </option> -->
+                    </select>
+                </div>
+        
+                <div class="input_container">
+                    <label for="age">Quantity</label>
+                    <input required placeholder="Enter Quantity" id="quantity" type="number">
+                </div>
+    
+                <div class="input_container">
+                    <label for="price">Price</label>
+                    <!-- <input required placeholder="Enter your Gender" id="gender" type="text"> -->
+                    <!-- <select name="" id="price"> -->
+                        <!-- <option value="Select Disabled">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option> -->
+                    <input required placeholder="Enter Price" id="price" type="number">
+                    <!-- </select> -->
+                </div>
+    
+                <div class="input_container">
+                    <label for="productImage">Product Image</label>
+                    <input required placeholder="Enter Image URL" id="image" type="text">
+                </div>
+        
+                <button class="actionButton" type="submit" id="proceedButton">Add</button>
+                <button class="actionButton" type="submit" id="removeButton">Remove</button>
+            </form>
+        </div>
+    </section>
+
+    <section class = 'adminProductStock'>
+        <div class="adminProduct">
+            <h2>Stock of Products</h2>
+            <div class="product-container">
+                <div class="products">
+                    <uL></uL>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+<script src = "admin.js"></script>
+</body>
+</html>
